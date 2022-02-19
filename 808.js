@@ -88,9 +88,10 @@ window.onload = function() {
 	
 	toneTab.addEventListener('click', function()
 	
-    if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
 	
 	{		
+	    if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 		console.log("Just measured:" + toneTab.textContent)
 	
 		    playerUrls = toneUrls 
@@ -101,7 +102,8 @@ window.onload = function() {
 	});
 	
 	//Wraparound toggle
-    var wrapAround = document.querySelector('#wrapAroundCheck');
+	var wrapAround = false;
+	wrapAround = document.querySelector('#wrapAroundCheck');
 	wrapAround.addEventListener('input', function()
 	{		
 		wrapAround = !wrapAround;
@@ -328,7 +330,7 @@ window.onload = function() {
 
             // Grid index updating:
 
-            if (!wrapAround) {   
+            if (wrapAround) {   
                  currGridIdx = (currGridIdx + 1) % grid[0].length;
 
             } else {
