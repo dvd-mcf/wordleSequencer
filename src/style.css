@@ -41,11 +41,7 @@ textarea {
     padding: 10;
 }
 
-.ubergrid {
-    margin-top: 20;
-    text-align: left;	
-	
-}
+
 
 .sq {
     width: 50;
@@ -116,26 +112,32 @@ textarea {
 
 .row {
   display: flex;
+  flex-wrap: wrap ;
+  
 }
 .inputColumn {
+	
   flex: 40%;
   padding: 30px;
   padding-left: 30px;
   padding-right:30px;
   padding-top: 5px;
   padding-bottom: 5px;
+  
 
 }
 .gridColumn {
+	
   flex: 60%;
   padding: 30px;
+  flex-wrap: wrap ;
 
 
 }
 
 .twitterDiv {
-
   padding: 5px;
+  text-align: centre;
 
 }
 
@@ -147,3 +149,32 @@ h1 {
 input[type='number']{
     width: 60px;
 } 
+
+#pausePlay {
+    background: #309605;
+	
+}
+
+#pausePlay:hover {
+    background: #00bf13;
+	
+}
+
+@media all and (max-width: 600px) {
+textarea{
+	font-size:4vw;
+	width: 60%;
+	height: 30%;
+	}
+	header {
+		font-size:3vw;
+	}
+	
+	.inputColumn {
+	  flex: 100%;
+	  height: 50%;
+
+	}
+	
+	
+}
