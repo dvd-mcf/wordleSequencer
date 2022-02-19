@@ -6,6 +6,12 @@ window.onload = function() {
 	var newGrid =  [];            
     var bpm = 120;
 	var input = document.getElementById('wordleInput');
+	
+	
+	var tonesLoaded = false
+	var drumsLoaded = false
+	var clicked = false
+	
 	var toneUrls = new Tone.Players({
 		            urls: {
 				        "6g": "assets/g6.wav",
@@ -26,7 +32,8 @@ window.onload = function() {
 						"1g": "assets/g1.wav",
 						"1y": "assets/y1.wav",
 				       
-		            },
+		            }, 
+					onload: [tonesLoaded = true, start()],
 		            fadeOut: "64n",
 				        }).toDestination();
 						
@@ -52,6 +59,7 @@ window.onload = function() {
 						"1y": "assets/808_Kick.wav",
 
 		            },
+					onload: [drumsLoaded = true, start()],
 		            fadeOut: "64n",
 				        }).toDestination();
 						
@@ -65,10 +73,13 @@ window.onload = function() {
 	
 	drumTab.addEventListener('click', function()
 	{		
+        if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 		playerUrls.stopAll(0);
 		    playerUrls = drumUrls 
 		
 		setupPlayers();
+	}
 	
 		
 	});
@@ -76,12 +87,16 @@ window.onload = function() {
 	var	toneTab = document.querySelector('#toneTab')
 	
 	toneTab.addEventListener('click', function()
+	
+    if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+	
 	{		
 		console.log("Just measured:" + toneTab.textContent)
 	
 		    playerUrls = toneUrls 
 		
 		setupPlayers();
+	}
 		
 	});
 	
@@ -100,6 +115,8 @@ window.onload = function() {
 	pausePlay.addEventListener('click', function()
 	
 	{		
+        if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 			console.log(pausePlay.textContent)
 		
 		if (playing == true) {
@@ -113,6 +130,7 @@ window.onload = function() {
 				Tone.Transport.start();
 				playing = true;
 			}
+		}
 		});
 		
 	
@@ -340,7 +358,26 @@ window.onload = function() {
 	// Wraparound Checkbox
 	
 
-	
+	function start (){
+
+		if (grid){
+			console.log("trying");
+			console.log(hasStarted);
+			console.log(grid.length);
+			console.log("Loaded?" + drumsLoaded + tonesLoaded + clicked);
+			
+        if (!hasStarted && grid.length >= 1) {
+			console.log("starting");
+			console.log(drumsLoaded + tonesLoaded + clicked);
+	        if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+			
+            Tone.start();
+            startSequencer();
+            hasStarted = true;
+		}
+        } 
+	}
+	}
 	
 
     // ================================================================
@@ -352,13 +389,10 @@ window.onload = function() {
     // Start on user click
     $("body").click(function() {
 		
-
-        if (!hasStarted && grid.length >= 1) {
-            Tone.start();
-            startSequencer();
-            hasStarted = true;
-        }
-		
+		 clicked = true
+	
+		start();
+ 
 		
     });
 
