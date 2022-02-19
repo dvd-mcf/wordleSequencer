@@ -1,0 +1,85 @@
+<html>
+    <head>
+		<meta charset=“UTF-8”>
+        <link rel="stylesheet" href="src/style.css"/>
+        <script src="https://unpkg.com/tone"></script>
+        <script src="lib/jquery-3.6.0.min.js"></script>
+        <script src="lib/Tone.js"></script>
+        <script src="src/grid.js"></script>
+        <script src="src/808.js"></script>
+    </head>
+
+    <body>
+        <!-- <div id="start">(start)</div> -->
+
+  <header>
+    <h1>Wordle Sequencer</h1>
+
+  </header>
+<div class = row>
+<div class = inputColumn>
+	
+<div id = "inputDiv">
+	<textarea id="wordleInput" placeholder="Paste your Wordle here" name="wordleInput" rows="12" cols="8" ></textarea>
+</div>
+
+<div id = "inputDiv">
+
+<div class="tab" id = "soundTabs">
+  <button class="tablinks" id = "pausePlay"> &#x23EF; </button>
+</div>
+</div>
+
+<div id = "inputDiv">
+	
+	BPM:
+	<input id = "bpmInput" type="number" value="120" />
+	
+	
+</div>
+
+<div id = "inputDiv">
+	Wraparound 
+  <input type="checkbox" id="wrapAroundCheck">
+	
+</div>
+
+
+<div id = "inputDiv">
+<div class="tab" id = "soundTabs">
+  <button class="tablinks" id = "drumTab"> &#x1F941; </button>
+  <button class="tablinks" id = "toneTab"> &#x1F3B9; </button>
+</div>
+
+
+
+
+</div>
+</div>
+<div class = gridColumn>
+        <div id="grid">
+            <!-- <div class="row">
+                <div class="sq green"></div>
+                <div class="sq green"></div>
+                <div class="sq yellow"></div>
+                <div class="sq black"></div>
+                <div class="sq green"></div>
+            </div> -->
+        </div>
+	</div>
+</div>
+<div class = twitterDiv>
+    <p>Created by David McFarlane and David Su</p>
+</div>
+<div class = inputDiv>
+<a href="https://twitter.com/dvd_mcf" class="icon-link" target="_blank">@dvd_mcf</a>
+<a href= "https://d-mcf.com/">d-mcf.com</a>
+</div>
+
+<div class = twitterDiv>
+<a href="https://twitter.com/usdivad" class="icon-link" target="_blank">@usdivad</a>
+<a href= "http://usdivad.com/">usdivad.com/</a>
+
+</div>
+    </body>
+</html>

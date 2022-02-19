@@ -1,0 +1,149 @@
+
+body {
+    background: #121213;
+	color: white;
+}
+
+header {
+	font-family: "Helvetica Neue";
+	padding: 20px;
+	padding-bottom: 0px;
+	
+}
+
+a {
+	font-family: "Helvetica Neue";
+	padding: 20px;
+	color: white;
+	
+}
+
+p{
+	font-family: "Helvetica Neue";
+	color: white;
+	
+}
+textarea {
+	font-family: "Helvetica Neue";
+	
+}
+	
+
+#inputDiv {
+    text-align: centre;
+    padding: 10;
+	font-family: "Helvetica Neue";
+
+}
+
+#grid {
+    align: left;	
+    padding: 10;
+}
+
+.ubergrid {
+    margin-top: 20;
+    text-align: left;	
+	
+}
+
+.sq {
+    width: 50;
+    height: 50;
+    margin: 2;
+    display: inline-block;
+    /*opacity: 0.5;*/
+}
+
+.active {
+    opacity: 1.0;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+.green {
+    background: #6aaa64;
+}
+
+
+
+.black {
+    background: #3a3a3c;
+}
+
+.yellow {
+    background: #c9b458;
+}
+
+
+.tabLinks {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	border-left: 0px;
+	border-top: 0px;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+.tabLinks:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+.tabLinks:active {
+	position:relative;
+	top:1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+.inputColumn {
+  flex: 40%;
+  padding: 30px;
+  padding-left: 30px;
+  padding-right:30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.gridColumn {
+  flex: 60%;
+  padding: 30px;
+
+
+}
+
+.twitterDiv {
+
+  padding: 5px;
+
+}
+
+h1 {
+	padding: 0px;
+}
+
+
+input[type='number']{
+    width: 60px;
+} 
