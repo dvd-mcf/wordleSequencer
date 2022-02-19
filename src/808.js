@@ -73,10 +73,13 @@ window.onload = function() {
 	
 	drumTab.addEventListener('click', function()
 	{		
+        if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 		playerUrls.stopAll(0);
 		    playerUrls = drumUrls 
 		
 		setupPlayers();
+	}
 	
 		
 	});
@@ -84,17 +87,23 @@ window.onload = function() {
 	var	toneTab = document.querySelector('#toneTab')
 	
 	toneTab.addEventListener('click', function()
+	
+	
 	{		
+	    if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 		console.log("Just measured:" + toneTab.textContent)
 	
 		    playerUrls = toneUrls 
 		
 		setupPlayers();
+	}
 		
 	});
 	
 	//Wraparound toggle
-    var wrapAround = document.querySelector('#wrapAroundCheck');
+	var wrapAround = false;
+	wrapAround = document.querySelector('#wrapAroundCheck');
 	wrapAround.addEventListener('input', function()
 	{		
 		wrapAround = !wrapAround;
@@ -108,6 +117,8 @@ window.onload = function() {
 	pausePlay.addEventListener('click', function()
 	
 	{		
+        if (drumsLoaded == true && tonesLoaded == true && clicked == true) {
+		
 			console.log(pausePlay.textContent)
 		
 		if (playing == true) {
@@ -121,6 +132,7 @@ window.onload = function() {
 				Tone.Transport.start();
 				playing = true;
 			}
+		}
 		});
 		
 	
@@ -318,7 +330,7 @@ window.onload = function() {
 
             // Grid index updating:
 
-            if (!wrapAround) {   
+            if (wrapAround) {   
                  currGridIdx = (currGridIdx + 1) % grid[0].length;
 
             } else {
